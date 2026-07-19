@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Perfil técnico de Valentino Carmona — Lenguajes, frameworks, paradigmas, patrones de diseño y métricas de eficiencia." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Valentino Carmona — Perfil Técnico" />
+  <meta property="og:description"
+    content="Documentación técnica detallada: stack, nivel de dominio, paradigmas, patrones de diseño y metodologías." />
+  <meta property="og:type" content="website" />
+  <title>Valentino Carmona — Perfil Técnico</title>
+
+  <!-- Google Fonts: misma pareja que index.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Sistema de tokens compartidos con index.html -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/sobre-mi-doc.css" />
+</head>
+
+<body class="doc-body">
+
+  <!-- ═══════════════════════════════════════
+       TOPBAR — navegación de retorno al hub
+  ═══════════════════════════════════════ -->
+  <header class="topbar" id="topbar" role="banner">
+    <div class="topbar__inner">
+
+      <!-- Breadcrumb de retorno (FR-11: navegación de retorno) -->
+      <nav class="topbar__breadcrumb" aria-label="Navegación de retorno">
+        <a href="index.html" class="topbar__back" id="btn-back-home" aria-label="Volver al portfolio">
+          <span class="topbar__back-arrow" aria-hidden="true">←</span>
+          <span class="topbar__back-logo">VC</span>
+        </a>
+        <span class="topbar__separator" aria-hidden="true">/</span>
+        <span class="topbar__current">Perfil Técnico</span>
+      </nav>
+
+      <!-- Acciones rápidas del topbar -->
+      <div class="topbar__actions">
+        <a href="index.html#contacto" class="topbar__cta" id="btn-topbar-contacto">
+          Contratar →
+        </a>
+        <!-- Botón hamburguesa: solo visible en mobile para el sidebar -->
+        <button class="topbar__toggle" id="sidebar-toggle"
+          aria-label="Abrir índice" aria-expanded="false" aria-controls="doc-sidebar">
+          <span class="topbar__hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       LAYOUT PRINCIPAL: Sidebar + Contenido
+  ═══════════════════════════════════════ -->
+  <div class="doc-layout" id="doc-layout">
+
+    <!-- ─────────────────────────────────────
+         SIDEBAR — Tree Navigation / Accordion
+    ───────────────────────────────────────── -->
+    <aside class="doc-sidebar" id="doc-sidebar" role="complementary" aria-label="Índice de contenidos">
+
+      <div class="sidebar__inner">
+
+        <!-- Título del sidebar -->
+        <div class="sidebar__header">
+          <p class="sidebar__label">Índice</p>
+          <h2 class="sidebar__title">Perfil Técnico</h2>
+        </div>
+
+        <!-- Buscador interno (placeholder) -->
+        <div class="sidebar__search" role="search">
+          <input
+            type="search"
+            id="doc-search"
+            class="sidebar__search-input"
+            placeholder="Buscar en el perfil..."
+            aria-label="Buscar sección"
+            disabled
+          />
+          <span class="sidebar__search-icon" aria-hidden="true">⌕</span>
+        </div>
+
+        <!-- Tree Navigation con Accordion Menu -->
+        <nav class="sidebar__nav" aria-label="Árbol de secciones">
+          <ul class="tree" role="tree">
+
+            <!-- ── Capítulo 1: Stack Tecnológico ── -->
+            <li class="tree__chapter" role="treeitem" aria-expanded="true">
+              <button class="tree__chapter-btn" id="ch1-btn"
+                aria-controls="ch1-items" aria-expanded="true">
+                <span class="tree__chapter-icon" aria-hidden="true">▾</span>
+                <span class="tree__chapter-number">01</span>
+                <span class="tree__chapter-label">Stack Tecnológico</span>
+              </button>
+              <ul class="tree__items" id="ch1-items" role="group">
+                <li class="tree__item" role="treeitem">
+                  <a href="#stack-lenguajes" class="tree__link is-active" id="nav-stack-lenguajes">
+                    Lenguajes de Programación
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#stack-frameworks" class="tree__link" id="nav-stack-frameworks">
+                    Frameworks &amp; Librerías
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#stack-databases" class="tree__link" id="nav-stack-databases">
+                    Bases de Datos
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#stack-tools" class="tree__link" id="nav-stack-tools">
+                    Herramientas &amp; DevOps
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- ── Capítulo 2: Paradigmas y Teoría ── -->
+            <li class="tree__chapter" role="treeitem" aria-expanded="false">
+              <button class="tree__chapter-btn" id="ch2-btn"
+                aria-controls="ch2-items" aria-expanded="false">
+                <span class="tree__chapter-icon" aria-hidden="true">▸</span>
+                <span class="tree__chapter-number">02</span>
+                <span class="tree__chapter-label">Paradigmas &amp; Teoría</span>
+              </button>
+              <ul class="tree__items tree__items--collapsed" id="ch2-items" role="group">
+                <li class="tree__item" role="treeitem">
+                  <a href="#paradigmas-poo" class="tree__link" id="nav-paradigmas-poo">
+                    Orientada a Objetos — SOLID y OOP
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#paradigmas-funcional" class="tree__link" id="nav-paradigmas-funcional">
+                    Funcional — Clojure e inmutabilidad
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#paradigmas-otros" class="tree__link" id="nav-paradigmas-otros">
+                    Concurrente y Orientada a Eventos
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#paradigmas-conceptos" class="tree__link" id="nav-paradigmas-conceptos">
+                    Conceptos Teóricos Clave
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- ── Capítulo 3: Patrones de Diseño ── -->
+            <li class="tree__chapter" role="treeitem" aria-expanded="false">
+              <button class="tree__chapter-btn" id="ch3-btn"
+                aria-controls="ch3-items" aria-expanded="false">
+                <span class="tree__chapter-icon" aria-hidden="true">▸</span>
+                <span class="tree__chapter-number">03</span>
+                <span class="tree__chapter-label">Patrones &amp; Arquitecturas</span>
+              </button>
+              <ul class="tree__items tree__items--collapsed" id="ch3-items" role="group">
+                <li class="tree__item" role="treeitem">
+                  <a href="#patrones-creacionales" class="tree__link" id="nav-patrones-creacionales">
+                    Patrones Creacionales
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#patrones-estructurales" class="tree__link" id="nav-patrones-estructurales">
+                    Patrones Estructurales
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#patrones-comportamiento" class="tree__link" id="nav-patrones-comportamiento">
+                    Patrones de Comportamiento
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#arquitecturas" class="tree__link" id="nav-arquitecturas">
+                    Arquitecturas de Software
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- ── Capítulo 4: Metodologías ── -->
+            <li class="tree__chapter" role="treeitem" aria-expanded="false">
+              <button class="tree__chapter-btn" id="ch4-btn"
+                aria-controls="ch4-items" aria-expanded="false">
+                <span class="tree__chapter-icon" aria-hidden="true">▸</span>
+                <span class="tree__chapter-number">04</span>
+                <span class="tree__chapter-label">Metodologías &amp; Testing</span>
+              </button>
+              <ul class="tree__items tree__items--collapsed" id="ch4-items" role="group">
+                <li class="tree__item" role="treeitem">
+                  <a href="#metodologias-agiles" class="tree__link" id="nav-metodologias-agiles">
+                    Metodologías Ágiles
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#metodologias-testing" class="tree__link" id="nav-metodologias-testing">
+                    Estrategias de Testing
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#metodologias-flujos" class="tree__link" id="nav-metodologias-flujos">
+                    Flujos de Desarrollo
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- ── Capítulo 5: Problemas Resueltos ── -->
+            <li class="tree__chapter" role="treeitem" aria-expanded="false">
+              <button class="tree__chapter-btn" id="ch5-btn"
+                aria-controls="ch5-items" aria-expanded="false">
+                <span class="tree__chapter-icon" aria-hidden="true">▸</span>
+                <span class="tree__chapter-number">05</span>
+                <span class="tree__chapter-label">Problemas Resueltos</span>
+              </button>
+              <ul class="tree__items tree__items--collapsed" id="ch5-items" role="group">
+                <li class="tree__item" role="treeitem">
+                  <a href="#problemas-logicos" class="tree__link" id="nav-problemas-logicos">
+                    Problemas Lógicos &amp; Algorítmicos
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#problemas-negocio" class="tree__link" id="nav-problemas-negocio">
+                    Problemas de Negocio
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#problemas-infraestructura" class="tree__link" id="nav-problemas-infraestructura">
+                    Problemas de Infraestructura
+                  </a>
+                </li>
+                <li class="tree__item" role="treeitem">
+                  <a href="#metricas" class="tree__link" id="nav-metricas">
+                    Métricas de Eficiencia
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+
+        <!-- Footer del sidebar -->
+        <div class="sidebar__footer">
+          <a href="index.html#contacto" class="sidebar__contact-btn" id="sidebar-btn-contacto">
+            Contratar servicios →
+          </a>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- ─────────────────────────────────────
+         CONTENIDO PRINCIPAL — Documentación
+    ───────────────────────────────────────── -->
+    <main class="doc-main" id="doc-main" role="main">
+
+      <!-- Barra de progreso de lectura -->
+      <div class="doc-progress" id="doc-progress" aria-hidden="true">
+        <div class="doc-progress__bar" id="doc-progress-bar"></div>
+      </div>
+
+      <div class="doc-content">
+
+        <!-- ════════════════════════════════════
+             CAPÍTULO 1: STACK TECNOLÓGICO
+        ════════════════════════════════════ -->
+        <section class="doc-chapter" id="cap-stack" aria-labelledby="cap-stack-title">
+          <div class="doc-chapter__header">
+            <span class="doc-chapter__number">01</span>
+            <h1 id="cap-stack-title" class="doc-chapter__title">Stack Tecnológico</h1>
+            <p class="doc-chapter__subtitle">
+              Inventario detallado de las tecnologías que domino, con nivel de profundidad
+              real por cada una. La distinción entre "solo visto" y "aplicado en producción"
+              es deliberada: no exagero ni subestimo.
+            </p>
+          </div>
+
+          <!-- ── 1.1 Lenguajes de Programación ── -->
+          <article class="doc-section" id="stack-lenguajes" aria-labelledby="stack-lenguajes-title">
+            <h2 id="stack-lenguajes-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Lenguajes de Programación
+            </h2>
+            <p class="doc-section__intro">
+              Mi relación con los lenguajes no es de coleccionista: elijo el que fuerza
+              a pensar en eficiencia. Trabajar con tipado estático y compilación explícita
+              me obligó a entender cómo las decisiones de estructura impactan directamente
+              en la latencia y el consumo de memoria.
+            </p>
+
+            <!-- Tabla de tecnologías con nivel de dominio -->
+            <div class="tech-table-wrapper" role="region" aria-label="Tabla de lenguajes">
+              <table class="tech-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Lenguaje</th>
+                    <th scope="col">Nivel de Dominio</th>
+                    <th scope="col">Contexto de Uso</th>
+                    <th scope="col">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ── Go ── -->
+                  <tr>
+                    <td>
+                      <span class="tech-name">Go (Golang)</span>
+                    </td>
+                    <td>
+                      <div class="skill-bar" role="meter"
+                        aria-label="Nivel de dominio" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 65%"></div>
+                      </div>
+                      <span class="skill-label">Mid — Aplicado en proyectos</span>
+                    </td>
+                    <td class="tech-context">
+                      Implementación avanzada de TDAs (Pilas, Colas, ABB, Heaps, Grafos),
+                      algoritmos de ordenamiento y lógica recursiva con control explícito
+                      de paso por valor vs. referencia.
+                    </td>
+                    <td>
+                      <span class="tech-badge tech-badge--active">Activo</span>
+                    </td>
+                  </tr>
+                  <!-- ── Java ── -->
+                  <tr>
+                    <td>
+                      <span class="tech-name">Java</span>
+                    </td>
+                    <td>
+                      <div class="skill-bar" role="meter"
+                        aria-label="Nivel de dominio" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 70%"></div>
+                      </div>
+                      <span class="skill-label">Mid — Aplicado en proyectos</span>
+                    </td>
+                    <td class="tech-context">
+                      Diseño orientado a objetos con SOLID, jerarquías de herencia,
+                      interfaces y polimorfismo. Desarrollo de aplicaciones de escritorio
+                      con JavaFX (patrón MVC), testing con JUnit y Mockito.
+                      Manejo del modelo de memoria: Heap, referencias, tipos primitivos vs. objetos.
+                    </td>
+                    <td>
+                      <span class="tech-badge tech-badge--active">Activo</span>
+                    </td>
+                  </tr>
+                  <!-- ── Clojure ── -->
+                  <tr>
+                    <td>
+                      <span class="tech-name">Clojure</span>
+                    </td>
+                    <td>
+                      <div class="skill-bar" role="meter"
+                        aria-label="Nivel de dominio" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 50%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos</span>
+                    </td>
+                    <td class="tech-context">
+                      Dialecto Lisp sobre la JVM. Programación funcional pura:
+                      inmutabilidad, funciones de orden superior (map, filter, reduce),
+                      estructuras de datos persistentes y concurrencia idiomática
+                      (átomos, STM, pmap para paralelismo automático).
+                    </td>
+                    <td>
+                      <span class="tech-badge tech-badge--active">Activo</span>
+                    </td>
+                  </tr>
+                  <!-- ── Python ── -->
+                  <tr>
+                    <td>
+                      <span class="tech-name">Python</span>
+                    </td>
+                    <td>
+                      <div class="skill-bar" role="meter"
+                        aria-label="Nivel de dominio" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 65%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos freelance</span>
+                    </td>
+                    <td class="tech-context">
+                      Desarrollo de lógica de negocio y capas de acceso a persistencia
+                      mediante ORMs y conectores. Mapeo de reglas de negocio a código
+                      imperativo y gestión de dependencias.
+                    </td>
+                    <td>
+                      <span class="tech-badge tech-badge--active">Activo</span>
+                    </td>
+                  </tr>
+                  <!-- PLACEHOLDER ROW — Agregar nuevos lenguajes aquí -->
+                  <!-- FIN PLACEHOLDER ROW -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Notas adicionales del bloque -->
+            <div class="doc-callout doc-callout--info" role="note">
+              <span class="doc-callout__icon" aria-hidden="true">ℹ</span>
+              <div class="doc-callout__body">
+                <strong>Escala de dominio:</strong>
+                <em>Solo visto</em> = leí la documentación o hice tutoriales sin proyecto real.
+                <em>Aplicado</em> = lo usé en proyectos concretos con entregas evaluadas.
+                <em>Mid</em> = diseño lógica a través de estructuras, no solo escribo código.
+                <em>Producción</em> = desplegado en sistemas reales con usuarios.
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 1.2 Frameworks & Librerías ── -->
+          <article class="doc-section" id="stack-frameworks" aria-labelledby="stack-frameworks-title">
+            <h2 id="stack-frameworks-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Frameworks &amp; Librerías
+            </h2>
+            <p class="doc-section__intro">
+              Mi trabajo con frameworks cubre dos ecosistemas: Go para sistemas de bajo nivel
+              y Java para aplicaciones con interfaz gráfica y testing estructurado.
+              El énfasis siempre fue entender los contratos internos antes de delegar
+              a bibliotecas externas.
+            </p>
+
+            <div class="tech-table-wrapper" role="region" aria-label="Tabla de frameworks">
+              <table class="tech-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Framework / Librería</th>
+                    <th scope="col">Ecosistema</th>
+                    <th scope="col">Nivel de Dominio</th>
+                    <th scope="col">Contexto de Uso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ── Stdlib Go ── -->
+                  <tr>
+                    <td><span class="tech-name">Stdlib Go (testing, sort, container/heap)</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Backend / General</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 60%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos</span>
+                    </td>
+                    <td class="tech-context">
+                      Tests unitarios de TDAs, implementación de interfaces
+                      (heap.Interface) para Colas de Prioridad y uso de sort
+                      como referencia comparativa de rendimiento.
+                    </td>
+                  </tr>
+                  <!-- ── JavaFX ── -->
+                  <tr>
+                    <td><span class="tech-name">JavaFX (+ Scene Builder / FXML)</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Desktop / GUI</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 60%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos</span>
+                    </td>
+                    <td class="tech-context">
+                      Desarrollo de aplicaciones de escritorio siguiendo el patrón MVC
+                      estricto. Gestión del Event Loop, manejo de hilos con
+                      Platform.runLater() para no bloquear la interfaz. Diseño visual
+                      con Scene Builder y vinculación de datos mediante Properties (Observer).
+                    </td>
+                  </tr>
+                  <!-- ── JUnit 5 + Mockito ── -->
+                  <tr>
+                    <td><span class="tech-name">JUnit 5 + Mockito</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Testing / Java</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 65%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos</span>
+                    </td>
+                    <td class="tech-context">
+                      Tests unitarios con ciclo TDD (rojo-verde-refactorizar).
+                      Mockito para crear Test Doubles (Stubs, Mocks, Spies) que
+                      aíslan dependencias externas — bases de datos, APIs — sin
+                      tocar el código productivo.
+                    </td>
+                  </tr>
+                  <!-- ── Java Standard Library ── -->
+                  <tr>
+                    <td><span class="tech-name">Java Standard Library (Collections, Generics)</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Backend / Java</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 65%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos</span>
+                    </td>
+                    <td class="tech-context">
+                      ArrayList, LinkedList, HashMap, TreeMap. Generics para
+                      polimorfismo paramétrico (Pila&lt;T&gt;). Distinción deliberada
+                      entre tipos primitivos (eficiencia CPU) y objetos en Heap
+                      (contratos y jerarquías).
+                    </td>
+                  </tr>
+                  <!-- ── SQLAlchemy & Alembic ── -->
+                  <tr>
+                    <td><span class="tech-name">SQLAlchemy & Alembic (+ psycopg2)</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Backend / Python</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 70%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos freelance</span>
+                    </td>
+                    <td class="tech-context">
+                      Mapeo Objeto-Relacional (ORM) para interactuar con sistemas de persistencia
+                      mediante objetos. Gestión del ciclo de vida de migraciones (upgrade/downgrade)
+                      para versionar esquemas estructurales programáticamente.
+                    </td>
+                  </tr>
+                  <!-- PLACEHOLDER ROW — Agregar nuevos frameworks aquí -->
+                  <!-- FIN PLACEHOLDER ROW -->
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- ── 1.3 Sistemas de Persistencia ── -->
+          <article class="doc-section" id="stack-databases" aria-labelledby="stack-databases-title">
+            <h2 id="stack-databases-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Sistemas de Persistencia
+            </h2>
+            <p class="doc-section__intro">
+              El trabajo con estructuras de datos persistentes en disco (Árboles B, B*, B+)
+              me dio una comprensión profunda de las decisiones de diseño arquitectónico:
+              cuándo priorizar acceso secuencial (B+) vs. densidad de almacenamiento (B*).
+              Esa lógica es la misma que subyace a los motores de almacenamiento modernos.
+            </p>
+
+            <div class="tech-table-wrapper" role="region" aria-label="Tabla de sistemas de persistencia">
+              <table class="tech-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Estructura / Concepto</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Nivel de Dominio</th>
+                    <th scope="col">Contexto de Uso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ── Árboles B / B+ (conceptual) ── -->
+                  <tr>
+                    <td><span class="tech-name">Árbol B / B* / B+ (estructuras multiclave)</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Almacenamiento en disco</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 50%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado — diseño e implementación teórica</span>
+                    </td>
+                    <td class="tech-context">
+                      Diseño y análisis comparativo de variantes (B vs. B* vs. B+)
+                      para minimizar accesos a disco en grandes volúmenes de datos.
+                      Base conceptual para entender motores de almacenamiento.
+                    </td>
+                  </tr>
+                  <!-- ── PostgreSQL & SQL ── -->
+                  <tr>
+                    <td><span class="tech-name">PostgreSQL & SQL</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Relacional (RDBMS)</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 75%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos profesionales</span>
+                    </td>
+                    <td class="tech-context">
+                      Modelado de datos normalizado (hasta FNBC/4FN), escritura de consultas complejas
+                      (CTEs, recursividad), optimización mediante análisis de planes de ejecución
+                      (EXPLAIN ANALYZE) y administración de índices B-Tree.
+                    </td>
+                  </tr>
+                  <!-- ── MongoDB ── -->
+                  <tr>
+                    <td><span class="tech-name">MongoDB</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">NoSQL Documental</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 65%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos freelance</span>
+                    </td>
+                    <td class="tech-context">
+                      Modelado semi-estructurado basado en documentos BSON. Implementación de
+                      pipelines de agregación (Aggregation Framework) para transformaciones de
+                      datos y cálculos estadísticos en tiempo real.
+                    </td>
+                  </tr>
+                  <!-- ── Neo4j & Cypher ── -->
+                  <tr>
+                    <td><span class="tech-name">Neo4j & Cypher</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">NoSQL Grafos</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 60%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos profesionales</span>
+                    </td>
+                    <td class="tech-context">
+                      Modelado de grafos dirigidos para redes interconectadas. Uso de Cypher
+                      para búsqueda de patrones de relaciones, sistemas de recomendación y
+                      cálculo de caminos, reduciendo el overhead transaccional.
+                    </td>
+                  </tr>
+                  <!-- ── Cassandra ── -->
+                  <tr>
+                    <td><span class="tech-name">Cassandra</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">NoSQL Wide Column</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 55%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en diseño de sistemas</span>
+                    </td>
+                    <td class="tech-context">
+                      Diseño orientado a consultas (Query-driven design).
+                      Estrategias de particionamiento y desnormalización deliberada
+                      para infraestructuras distribuidas con alta tasa de escritura.
+                    </td>
+                  </tr>
+                  <!-- PLACEHOLDER ROW — Agregar bases de datos concretas aquí -->
+                  <!-- FIN PLACEHOLDER ROW -->
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- ── 1.4 Herramientas & DevOps ── -->
+          <article class="doc-section" id="stack-tools" aria-labelledby="stack-tools-title">
+            <h2 id="stack-tools-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Herramientas &amp; DevOps
+            </h2>
+            <p class="doc-section__intro">
+              Linux como entorno obligatorio de desarrollo me acercó a las herramientas
+              de la industria real: compiladores nativos, gestión de procesos, scripting
+              de automatización y control de versiones sin abstracciones innecesarias.
+            </p>
+
+            <!-- Grid de herramientas (chips visuales) -->
+            <div class="tools-grid" role="list" aria-label="Herramientas y DevOps">
+              <!-- ── Herramientas actuales ── -->
+              <div class="tool-chip" role="listitem">
+                <span class="tool-chip__name">Linux (Ubuntu)</span>
+                <span class="tool-chip__level">Entorno principal de desarrollo</span>
+              </div>
+              <div class="tool-chip" role="listitem">
+                <span class="tool-chip__name">Git</span>
+                <span class="tool-chip__level">Control de versiones</span>
+              </div>
+              <div class="tool-chip" role="listitem">
+                <span class="tool-chip__name">Go Compiler (go build / go test)</span>
+                <span class="tool-chip__level">Compilación y testing nativo</span>
+              </div>
+              <div class="tool-chip" role="listitem">
+                <span class="tool-chip__name">VSCode</span>
+                <span class="tool-chip__level">IDE principal</span>
+              </div>
+              <div class="tool-chip" role="listitem">
+                <span class="tool-chip__name">IntelliJ IDEA</span>
+                <span class="tool-chip__level">IDE para proyectos Java / JavaFX</span>
+              </div>
+              <div class="tool-chip" role="listitem">
+                <span class="tool-chip__name">Scene Builder</span>
+                <span class="tool-chip__level">Editor visual drag-and-drop para JavaFX (FXML)</span>
+              </div>
+              <div class="tool-chip" role="listitem">
+                <span class="tool-chip__name">Astah UML</span>
+                <span class="tool-chip__level">Modelado de diagramas de clases y secuencia</span>
+              </div>
+              <div class="tool-chip" role="listitem">
+                <span class="tool-chip__name">myrpl.ar</span>
+                <span class="tool-chip__level">Plataforma de ejercitación con autocorrección</span>
+              </div>
+              <div class="tool-chip" role="listitem">
+                <span class="tool-chip__name">Docker & Docker Compose</span>
+                <span class="tool-chip__level">Virtualización y aislamiento de entornos</span>
+              </div>
+              <!-- PLACEHOLDER CHIP — Agregar nuevas herramientas aquí -->
+              <!-- FIN PLACEHOLDER CHIP -->
+            </div>
+          </article>
+        </section>
+
+        <!-- ════════════════════════════════════
+             CAPÍTULO 2: PARADIGMAS & TEORÍA
+        ════════════════════════════════════ -->
+        <section class="doc-chapter" id="cap-paradigmas" aria-labelledby="cap-paradigmas-title">
+          <div class="doc-chapter__header">
+            <span class="doc-chapter__number">02</span>
+            <h2 id="cap-paradigmas-title" class="doc-chapter__title">Paradigmas &amp; Teoría</h2>
+            <p class="doc-chapter__subtitle">
+              Los paradigmas y conceptos teóricos que internalizé no como definiciones de manual,
+              sino como herramientas activas que aplico al diseñar y refactorizar sistemas.
+            </p>
+          </div>
+
+          <!-- ── 2.1 Programación Orientada a Objetos ── -->
+          <article class="doc-section" id="paradigmas-poo" aria-labelledby="paradigmas-poo-title">
+            <h2 id="paradigmas-poo-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Programación Orientada a Objetos
+            </h2>
+
+            <div class="concept-block">
+              <h3 class="concept-block__title">Abstracción, encapsulamiento y diseño de contratos</h3>
+              <ul class="concept-list" role="list">
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Tipo de Dato Abstracto (TDA)</span>
+                  <span class="concept-list__desc">
+                    Entiendo un TDA como un contrato: el "qué hace" (comportamiento/primitivas)
+                    separado completamente del "cómo lo hace" (implementación interna).
+                    La interfaz pública es inmutable para el consumidor; los detalles internos
+                    pueden optimizarse sin romper el código cliente.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Encapsulamiento estricto — Tell-Don't-Ask</span>
+                  <span class="concept-list__desc">
+                    No se accede al estado interno de un objeto para tomar decisiones
+                    externas: se le ordena al objeto que ejecute su propia lógica.
+                    Los getters/setters automáticos erosionan el encapsulamiento; convierten
+                    objetos en contenedores de datos pasivos y exponen la implementación
+                    a agentes externos que no deberían conocerla.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Principio de Mínimo Compromiso y Menor Asombro</span>
+                  <span class="concept-list__desc">
+                    La interfaz de un objeto expone solo lo esencial. El comportamiento
+                    es predecible y sin efectos secundarios inesperados. Un método
+                    que altera estado ajeno a su propósito declarado es un bug de diseño,
+                    no de implementación.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Herencia vs. Composición</span>
+                  <span class="concept-list__desc">
+                    La herencia genera acoplamiento rígido: un cambio en la superclase
+                    puede romper toda la cadena de descendencia. La composición
+                    ("tener un" comportamiento en lugar de "ser" un tipo) permite
+                    intercambiar colaboradores sin colapsar la jerarquía.
+                    En proyectos donde apliqué este criterio, elegí interfaces sobre
+                    jerarquías siempre que no existía una relación semántica real is-a.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Polimorfismo — cuatro dimensiones</span>
+                  <span class="concept-list__desc">
+                    Sobrecarga (mismo nombre, distinta firma), coerción (promoción automática
+                    de tipos), paramétrico (Generics, ej. Pila&lt;T&gt;) e inclusión (subtipado:
+                    tratar una subclase como su superclase). El polimorfismo de inclusión
+                    es la herramienta para eliminar condicionales basados en tipo y
+                    cumplir el principio Open/Closed.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Refactorización — Replace Conditional with Polymorphism</span>
+                  <span class="concept-list__desc">
+                    Un switch sobre tipos de objetos es un "code smell" clásico: viola
+                    el principio de Abierto/Cerrado porque agregar un tipo nuevo requiere
+                    modificar el código existente. Lo elimino creando una jerarquía donde
+                    cada subclase implementa su propia lógica. El cliente solo llama
+                    al método; el objeto decide cómo responder.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Principios SOLID en diseño orientado a objetos</span>
+                  <span class="concept-list__desc">
+                    SRP (una responsabilidad por clase), OCP (abierto a extensión, cerrado
+                    a modificación), LSP (las subclases cumplen el contrato de la superclase
+                    sin romper el sistema), ISP (interfaces pequeñas y específicas, no
+                    monolíticas), DIP (depender de abstracciones, no de concreciones).
+                    Los aplico como guía de diseño antes de codificar, no como checklist
+                    post-entrega.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">UML — Diagramas de Clases y Secuencia</span>
+                  <span class="concept-list__desc">
+                    El diagrama de clases define relaciones estáticas entre entidades
+                    (generalización para herencia, realización para interfaces).
+                    El diagrama de secuencia modela el flujo dinámico de mensajes entre
+                    objetos. Los uso como herramienta de diseño pre-codificación, no
+                    como documentación posterior.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="doc-callout doc-callout--example" role="note">
+              <span class="doc-callout__icon" aria-hidden="true">→</span>
+              <div class="doc-callout__body">
+                <strong>Aplicación concreta:</strong>
+                Implementé Pilas, Colas, Listas Enlazadas, ABB, AVL y Heaps en Go
+                respetando estrictamente la separación interfaz/implementación.
+                En Java, diseñé sistemas de escritorio completos siguiendo MVC,
+                aplicando SOLID y refactorizando jerarquías de objetos para eliminar
+                condicionales. Cada entrega pasó tests automáticos antes de la
+                revisión manual de calidad de diseño.
+              </div>
+            </div>
+          </article>
+
+          <!-- ── 2.2 Programación Funcional ── -->
+          <article class="doc-section" id="paradigmas-funcional" aria-labelledby="paradigmas-funcional-title">
+            <h2 id="paradigmas-funcional-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Programación Funcional
+            </h2>
+
+            <div class="concept-block">
+              <h3 class="concept-block__title">Elementos funcionales aplicados</h3>
+              <ul class="concept-list" role="list">
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Recursividad como herramienta primaria</span>
+                  <span class="concept-list__desc">
+                    División y Conquista es inherentemente recursiva. Aplico recursión
+                    no como un truco, sino como la forma natural de expresar problemas
+                    que se reducen a subproblemas del mismo tipo (árboles, grafos, búsqueda binaria).
+                    El caso base no es un detalle: es la condición de terminación que garantiza
+                    la corrección del algoritmo.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Funciones como ciudadanos de primer orden</span>
+                  <span class="concept-list__desc">
+                    En Go usé funciones de comparación pasadas como parámetro para
+                    generalizar algoritmos de ordenamiento y construcción de árboles.
+                    En Clojure, las funciones se almacenan en variables, se pasan como
+                    argumentos y se devuelven como valores: map, filter y reduce
+                    reemplazan los ciclos for/while cuando el problema lo permite.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Inmutabilidad y funciones puras (Clojure)</span>
+                  <span class="concept-list__desc">
+                    Una función pura siempre devuelve el mismo resultado ante los mismos
+                    argumentos y no genera efectos secundarios. Las estructuras de datos
+                    son persistentes: "modificar" una lista devuelve una nueva versión
+                    que comparte nodos con la anterior. Esta propiedad elimina condiciones
+                    de carrera en entornos concurrentes sin necesitar candados explícitos.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Paralelismo funcional — pmap</span>
+                  <span class="concept-list__desc">
+                    En Clojure, convertir una operación secuencial en paralela es
+                    reemplazar map por pmap. El lenguaje distribuye el cálculo en
+                    múltiples hilos sin necesidad de candados de bajo nivel, porque
+                    los datos son inmutables. Lo apliqué en proyectos de procesamiento
+                    de datos en lote con reducciones de tiempo de 13x sobre la versión secuencial.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ── 2.3 Otros Paradigmas ── -->
+          <article class="doc-section" id="paradigmas-otros" aria-labelledby="paradigmas-otros-title">
+            <h2 id="paradigmas-otros-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Otros Paradigmas
+            </h2>
+
+            <div class="concept-block">
+              <h3 class="concept-block__title">Imperativo, Concurrente y Orientado a Eventos</h3>
+              <ul class="concept-list" role="list">
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Imperativo — control explícito de flujo</span>
+                  <span class="concept-list__desc">
+                    Punto de partida para código de sistemas: control directo del flujo,
+                    gestión explícita de estructuras de datos. Trabajo con recursión
+                    cuando el problema lo sugiere estructuralmente (árboles, grafos,
+                    División y Conquista) e iteración cuando el overhead del call stack
+                    es inaceptable para el SLA de rendimiento.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Concurrente — hilos, secciones críticas y sincronización</span>
+                  <span class="concept-list__desc">
+                    Un proceso se divide en hilos que comparten memoria, lo que genera
+                    riesgos reales: condiciones de carrera (dos hilos modifican el mismo
+                    recurso sin orden determinístico) y deadlocks (dos hilos bloqueados
+                    esperando recursos que el otro retiene). Los resuelvo mediante
+                    secciones críticas con locks, patrones productor-consumidor
+                    con wait/notify, y en Clojure, evitando el problema de raíz
+                    con inmutabilidad.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Orientado a Eventos — Event Loop y asincronía</span>
+                  <span class="concept-list__desc">
+                    El flujo del programa lo determinan eventos: clics, teclas, timers,
+                    mensajes de red. Un dispatcher registra listeners que se ejecutan
+                    automáticamente cuando el evento ocurre. La regla crítica: no
+                    bloquear el hilo principal de la interfaz con tareas pesadas.
+                    Lo apliqué en JavaFX delegando lógica pesada a hilos secundarios
+                    y actualizando la UI de forma segura con Platform.runLater().
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ── 2.4 Conceptos Teóricos Clave ── -->
+          <article class="doc-section" id="paradigmas-conceptos" aria-labelledby="paradigmas-conceptos-title">
+            <h2 id="paradigmas-conceptos-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Conceptos Teóricos Clave
+            </h2>
+
+            <!-- Grid de conceptos teóricos -->
+            <div class="concept-grid" role="list" aria-label="Conceptos teóricos">
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Complejidad Computacional — Big O</h4>
+                <p class="concept-card__body">
+                  Analizo el comportamiento asintótico de los algoritmos en el peor caso.
+                  No como ejercicio académico: es la métrica que determina si una solución
+                  es viable a escala. La diferencia entre O(n) y O(log n) define si
+                  un sistema puede escalar o no.
+                </p>
+                <span class="concept-card__tag">Aplicado — en todo diseño algorítmico</span>
+              </div>
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Teorema Maestro</h4>
+                <p class="concept-card__body">
+                  Herramienta matemática para calcular la complejidad de algoritmos
+                  de División y Conquista. Evalúo T(n) = A·T(n/B) + O(n^C) comparando
+                  log_B(A) con C. Aplicado concretamente en el Problema del Pico
+                  (A=1, B=2, C=0 → O(log n)).
+                </p>
+                <span class="concept-card__tag">Profundo — derivación matemática exacta</span>
+              </div>
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Teoría de Grafos</h4>
+                <p class="concept-card__body">
+                  Modelado de redes como grafos (dirigidos/no dirigidos, pesados/no pesados).
+                  Elección de representación según densidad: Listas de Adyacencia O(V+E)
+                  para grafos dispersos vs. Matriz de Adyacencia O(V²) para grafos densos
+                  con consultas de arista frecuentes.
+                </p>
+                <span class="concept-card__tag">Aplicado — implementación en Go</span>
+              </div>
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Límite inferior de ordenamientos comparativos</h4>
+                <p class="concept-card__body">
+                  Cualquier algoritmo que solo compara elementos no puede superar O(n log n)
+                  en el peor caso. Este umbral matemático me guía para elegir entre algoritmos
+                  comparativos (Merge Sort, Quick Sort) y no comparativos (Counting Sort,
+                  Radix Sort) según las propiedades de los datos de entrada.
+                </p>
+                <span class="concept-card__tag">Profundo — fundamento de decisión algorítmica</span>
+              </div>
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Conectividad en Grafos — CFC y Articulación</h4>
+                <p class="concept-card__body">
+                  Componentes Fuertemente Conexas (CFC): subgrafos dirigidos donde todos
+                  los nodos son mutuamente alcanzables. Puntos de Articulación: vértices
+                  cuya remoción fragmenta el grafo, detectados con DFS modificado (Tarjan).
+                  Críticos para diseñar redes resilientes.
+                </p>
+                <span class="concept-card__tag">Aplicado — algoritmos de Tarjan y Kahn</span>
+              </div>
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Orden Topológico — DAGs</h4>
+                <p class="concept-card__body">
+                  Resolución de dependencias en Grafos Dirigidos Acíclicos (DAGs).
+                  Implementé tanto el enfoque BFS (Algoritmo de Kahn, robusto para
+                  detección temprana de ciclos) como el basado en DFS (inversión de pila).
+                  Aplica directamente a sistemas de build, compiladores y despliegues.
+                </p>
+                <span class="concept-card__tag">Aplicado — Kahn + DFS</span>
+              </div>
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Sistemas Distribuidos y Teorema CAP</h4>
+                <p class="concept-card__body">
+                  Análisis del trade-off ineludible entre Consistencia, Disponibilidad y
+                  Tolerancia a particiones. Diseño de arquitecturas bajo propiedades BASE
+                  (Eventual Consistency) frente a esquemas tradicionales, utilizando
+                  hashing consistente y estrategias de replicación/fragmentación.
+                </p>
+                <span class="concept-card__tag">Profundo — fundamento arquitectónico</span>
+              </div>
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Concurrencia en Sistemas de Misión Crítica</h4>
+                <p class="concept-card__body">
+                  Gestión del estado atómico en entornos multiusuario. Resolución de anomalías
+                  (actualizaciones perdidas, lecturas sucias) mediante protocolos de serializabilidad
+                  (2PL estricto) y arquitecturas multiversión (MVCC) para evitar cuellos de botella.
+                </p>
+                <span class="concept-card__tag">Aplicado — en escenarios de alta concurrencia</span>
+              </div>
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Procesamiento y Costos de Ejecución (I/O)</h4>
+                <p class="concept-card__body">
+                  Estimación matemática de costos en disco y memoria para seleccionar el plan de
+                  ejecución óptimo (ej. Sort-Merge vs Hash Join). Comprensión interna de pipelines,
+                  heurísticas, catálogos de metadatos y álgebra relacional aplicada.
+                </p>
+                <span class="concept-card__tag">Profundo — optimización de rendimiento</span>
+              </div>
+
+              <div class="concept-card" role="listitem">
+                <h4 class="concept-card__title">Protocolos de Recuperación ante Fallas</h4>
+                <p class="concept-card__body">
+                  Garantía de durabilidad mediante algoritmos transaccionales (UNDO/REDO) y
+                  Write-Ahead Logging (WAL). Implementación de Checkpoints activos para minimizar
+                  tiempos de inactividad durante la reconstrucción del estado del sistema.
+                </p>
+                <span class="concept-card__tag">Profundo — resiliencia y confiabilidad</span>
+              </div>
+              <!-- PLACEHOLDER CARD — Agregar conceptos de nuevas materias aquí -->
+            </div>
+          </article>
+        </section>
+
+        <!-- ════════════════════════════════════
+             CAPÍTULO 3: PATRONES & ARQUITECTURAS
+        ════════════════════════════════════ -->
+        <section class="doc-chapter" id="cap-patrones" aria-labelledby="cap-patrones-title">
+          <div class="doc-chapter__header">
+            <span class="doc-chapter__number">03</span>
+            <h2 id="cap-patrones-title" class="doc-chapter__title">Patrones &amp; Arquitecturas</h2>
+            <p class="doc-chapter__subtitle">
+              Los patrones de diseño que conozco y las arquitecturas de software que implementé.
+              Cada uno con su contexto de aplicación real.
+            </p>
+          </div>
+
+          <!-- ── 3.1 Patrones Creacionales ── -->
+          <article class="doc-section" id="patrones-creacionales" aria-labelledby="patrones-creacionales-title">
+            <h2 id="patrones-creacionales-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Patrones Creacionales
+            </h2>
+            <div class="pattern-list" role="list">
+              <div class="pattern-item" role="listitem">
+                <div class="pattern-item__header">
+                  <h4 class="pattern-item__name">Factory Method — Delegación de la creación de objetos</h4>
+                  <span class="pattern-item__status pattern-item__status--seen">
+                    Conocido — aplicado conceptualmente
+                  </span>
+                </div>
+                <p class="pattern-item__desc">
+                  Define una interfaz para crear objetos, pero deja que las subclases
+                  decidan qué clase instanciar. Útil cuando el código cliente no debe
+                  conocer el tipo concreto del objeto que recibe. Lo apliqué
+                  en proyectos Java donde el tipo de componente gráfico variaba
+                  según la configuración en tiempo de ejecución.
+                </p>
+              </div>
+              <!-- PLACEHOLDER PATTERN — Agregar patrones creacionales aquí -->
+            </div>
+          </article>
+
+          <!-- ── 3.2 Patrones Estructurales ── -->
+          <article class="doc-section" id="patrones-estructurales" aria-labelledby="patrones-estructurales-title">
+            <h2 id="patrones-estructurales-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Patrones Estructurales
+            </h2>
+            <div class="pattern-list" role="list">
+              <div class="pattern-item" role="listitem">
+                <div class="pattern-item__header">
+                  <h4 class="pattern-item__name">Composición sobre Herencia — Delegación estructural</h4>
+                  <span class="pattern-item__status pattern-item__status--applied">
+                    Aplicado en proyectos
+                  </span>
+                </div>
+                <p class="pattern-item__desc">
+                  En lugar de heredar comportamiento, el objeto "tiene un" colaborador
+                  que lo ejecuta. Esta estructura permite intercambiar la implementación
+                  concreta sin modificar el objeto contenedor. Es el patrón que subyace
+                  a la Inyección de Dependencias y a la mayoría de los frameworks
+                  modernos. Lo apliqué en proyectos Java donde los requisitos de
+                  comportamiento cambiaban por configuración.
+                </p>
+              </div>
+              <!-- PLACEHOLDER PATTERN — Agregar patrones estructurales aquí -->
+            </div>
+          </article>
+
+          <!-- ── 3.3 Patrones de Comportamiento ── -->
+          <article class="doc-section" id="patrones-comportamiento" aria-labelledby="patrones-comportamiento-title">
+            <h2 id="patrones-comportamiento-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Patrones de Comportamiento
+            </h2>
+            <div class="pattern-list" role="list">
+              <!-- ── Iterador ── -->
+              <div class="pattern-item" role="listitem">
+                <div class="pattern-item__header">
+                  <h4 class="pattern-item__name">Iterador</h4>
+                  <span class="pattern-item__status pattern-item__status--applied">
+                    Aplicado en proyectos
+                  </span>
+                </div>
+                <p class="pattern-item__desc">
+                  Implementé el patrón Iterador como TDA en sí mismo en listas enlazadas
+                  y árboles. Permite el recorrido secuencial de colecciones complejas
+                  sin exponer la representación interna (nodos o punteros).
+                  Realización práctica del principio Open/Closed: agrego comportamiento
+                  sin modificar el TDA original.
+                </p>
+              </div>
+              <!-- ── Observer ── -->
+              <div class="pattern-item" role="listitem">
+                <div class="pattern-item__header">
+                  <h4 class="pattern-item__name">Observer</h4>
+                  <span class="pattern-item__status pattern-item__status--applied">
+                    Aplicado en proyectos
+                  </span>
+                </div>
+                <p class="pattern-item__desc">
+                  Un objeto (Subject) mantiene una lista de dependientes (Observers)
+                  y los notifica automáticamente cuando su estado cambia. Lo apliqué
+                  en proyectos JavaFX con Properties: los elementos de la UI se
+                  vinculan (bind) al modelo y se actualizan solos ante cualquier
+                  cambio de datos, sin acoplamiento directo entre capas.
+                </p>
+              </div>
+              <!-- ── Strategy ── -->
+              <div class="pattern-item" role="listitem">
+                <div class="pattern-item__header">
+                  <h4 class="pattern-item__name">Strategy</h4>
+                  <span class="pattern-item__status pattern-item__status--applied">
+                    Aplicado en proyectos
+                  </span>
+                </div>
+                <p class="pattern-item__desc">
+                  Define una familia de algoritmos intercambiables. El contexto
+                  no conoce qué algoritmo usa: solo invoca la interfaz.
+                  Lo apliqué en proyectos de ordenamiento donde el algoritmo óptimo
+                  (Merge Sort, Quick Sort, Counting Sort) variaba según las propiedades
+                  de los datos, sin modificar el código cliente.
+                </p>
+              </div>
+              <!-- ── Template Method ── -->
+              <div class="pattern-item" role="listitem">
+                <div class="pattern-item__header">
+                  <h4 class="pattern-item__name">Template Method</h4>
+                  <span class="pattern-item__status pattern-item__status--applied">
+                    Aplicado en proyectos
+                  </span>
+                </div>
+                <p class="pattern-item__desc">
+                  La clase base define el esqueleto del algoritmo; las subclases
+                  implementan los pasos variables. Aplica Open/Closed de forma directa:
+                  el flujo general está cerrado a modificación, pero los pasos
+                  específicos están abiertos a extensión por herencia.
+                </p>
+              </div>
+              <!-- PLACEHOLDER PATTERN — Agregar patrones de comportamiento aquí -->
+            </div>
+          </article>
+
+          <!-- ── 3.4 Arquitecturas de Software ── -->
+          <article class="doc-section" id="arquitecturas" aria-labelledby="arquitecturas-title">
+            <h2 id="arquitecturas-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Arquitecturas de Software
+            </h2>
+            <p class="doc-section__intro">
+              Las arquitecturas que conozco cubren desde el diseño por capas de abstracción
+              con TDAs hasta arquitecturas de aplicación completas (MVC) y estrategias
+              algorítmicas (División y Conquista). Cada una con un contexto de aplicación real.
+            </p>
+
+            <div class="arch-grid" role="list" aria-label="Arquitecturas implementadas">
+
+              <div class="arch-card" role="listitem">
+                <div class="arch-card__badge">TDA</div>
+                <h4 class="arch-card__title">Arquitectura por Capas de Abstracción</h4>
+                <p class="arch-card__desc">
+                  Separación estricta entre interfaz pública (qué hace) e implementación
+                  interna (cómo lo hace). Cada TDA es una capa aislada: Pila sobre Lista,
+                  Cola sobre Lista, Heap sobre Arreglo. El cambio de implementación
+                  no afecta al consumidor mientras se mantenga el contrato.
+                </p>
+                <div class="arch-card__meta">
+                  <span class="arch-card__tag">Estructuras de datos en Go</span>
+                  <span class="arch-card__status">Implementada</span>
+                </div>
+              </div>
+
+              <div class="arch-card" role="listitem">
+                <div class="arch-card__badge">D&amp;C</div>
+                <h4 class="arch-card__title">División y Conquista</h4>
+                <p class="arch-card__desc">
+                  Estrategia algorítmica que parte el problema en subproblemas más pequeños,
+                  los resuelve recursivamente y combina los resultados.
+                  Aplicada en: Merge Sort, Quick Sort, Búsqueda Binaria, Problema del Pico,
+                  búsqueda en arreglo rotado y cálculo eficiente de potencias.
+                </p>
+                <div class="arch-card__meta">
+                  <span class="arch-card__tag">Algoritmia — reducción O(n log n)</span>
+                  <span class="arch-card__status">Implementada</span>
+                </div>
+              </div>
+
+              <div class="arch-card" role="listitem">
+                <div class="arch-card__badge">MVC</div>
+                <h4 class="arch-card__title">Modelo — Vista — Controlador</h4>
+                <p class="arch-card__desc">
+                  Separación estricta entre los datos y su lógica (Modelo), la presentación
+                  (Vista) y la mediación entre ambas (Controlador). Un cambio estético
+                  en la interfaz no toca nunca la lógica de negocio, y viceversa.
+                  Implementada con JavaFX: el Modelo gestiona el estado, la Vista
+                  reacciona vía el patrón Observer (Properties), el Controlador
+                  coordina el flujo sin exponer detalles de ninguna capa.
+                </p>
+                <div class="arch-card__meta">
+                  <span class="arch-card__tag">JavaFX — aplicaciones de escritorio</span>
+                  <span class="arch-card__status">Implementada</span>
+                </div>
+              </div>
+
+              <div class="arch-card" role="listitem">
+                <div class="arch-card__badge">OOP</div>
+                <h4 class="arch-card__title">Arquitectura basada en Interfaces y Composición</h4>
+                <p class="arch-card__desc">
+                  Los módulos dependen de abstracciones (interfaces), no de
+                  implementaciones concretas. Los objetos componen comportamiento
+                  en lugar de heredarlo. Evita el acoplamiento rígido de las
+                  jerarquías profundas y permite sustituir implementaciones
+                  sin modificar el código cliente — base del principio de
+                  Inversión de Dependencia.
+                </p>
+                <div class="arch-card__meta">
+                  <span class="arch-card__tag">Java — diseño orientado a objetos</span>
+                  <span class="arch-card__status">Implementada</span>
+                </div>
+              </div>
+
+              <!-- PLACEHOLDER ARCH CARD — Agregar arquitecturas aquí -->
+            </div>
+          </article>
+        </section>
+
+        <!-- ════════════════════════════════════
+             CAPÍTULO 4: METODOLOGÍAS & TESTING
+        ════════════════════════════════════ -->
+        <section class="doc-chapter" id="cap-metodologias" aria-labelledby="cap-metodologias-title">
+          <div class="doc-chapter__header">
+            <span class="doc-chapter__number">04</span>
+            <h2 id="cap-metodologias-title" class="doc-chapter__title">Metodologías &amp; Testing</h2>
+            <p class="doc-chapter__subtitle">
+              Cómo organizo el trabajo, cómo garantizo la calidad y qué estrategias de testing
+              aplico. No como teoría, sino como práctica real en proyectos desplegados.
+            </p>
+          </div>
+
+          <!-- ── 4.1 Metodologías Ágiles ── -->
+          <article class="doc-section" id="metodologias-agiles" aria-labelledby="metodologias-agiles-title">
+            <h2 id="metodologias-agiles-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Metodologías Ágiles
+            </h2>
+            <p class="doc-section__intro">
+              Mi metodología de trabajo es inquisitiva y estructurada. Antes de escribir
+              una sola línea de código, identifico el tipo de problema, modelo visualmente
+              la lógica y valido la complejidad esperada. En proyectos de equipo,
+              acordar los contratos de interfaz antes de que cada integrante implemente
+              su módulo es la forma más práctica de metodología ágil a pequeña escala:
+              trabajar contra interfaces, no contra implementaciones concretas.
+            </p>
+
+            <div class="concept-block">
+              <h3 class="concept-block__title">Pipeline de Ingeniería que aplico</h3>
+              <ul class="concept-list" role="list">
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">1. Reconocimiento y Clasificación</span>
+                  <span class="concept-list__desc">
+                    Identifico el tipo de problema antes de codificar: ¿es de grafos o recursión?
+                    ¿Los datos tienen rango acotado? ¿Necesito orden o solo acceso por clave?
+                    Las "pistas estructurales" del enunciado determinan la estrategia.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">2. Modelado Visual</span>
+                  <span class="concept-list__desc">
+                    Dibujo la lógica antes de codificar. No es un hábito de principiante:
+                    es la defensa principal contra errores de lógica en particiones recursivas
+                    y errores "off-by-one" en recorridos de estructuras.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">3. Planteamiento Lógico Exhaustivo</span>
+                  <span class="concept-list__desc">
+                    Defino casos base, método de partición y gestión de llamadas recursivas
+                    antes de la implementación. Un algoritmo sin caso base bien definido
+                    no es un algoritmo, es un bug con forma de función.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">4. Validación de Restricciones — Check Final</span>
+                  <span class="concept-list__desc">
+                    Re-verifico el orden temporal (Big O) y los requisitos del problema.
+                    Si la complejidad no cumple el SLA esperado, la solución se rediseña,
+                    no se optimiza superficialmente.
+                  </span>
+                </li>
+                <!-- PLACEHOLDER ITEM — Agregar metodologías de nuevas materias aquí -->
+              </ul>
+            </div>
+          </article>
+
+          <!-- ── 4.2 Estrategias de Testing ── -->
+          <article class="doc-section" id="metodologias-testing" aria-labelledby="metodologias-testing-title">
+            <h2 id="metodologias-testing-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Estrategias de Testing
+            </h2>
+            <p class="doc-section__intro">
+              Mi disciplina de testing surgió de un entorno donde el código no se
+              consideraba entregado hasta que pasaba todas las pruebas automáticas.
+              El corrector automático era el primer guardián de calidad; el corrector
+              humano evaluaba el diseño solo después de que la lógica era correcta.
+            </p>
+
+            <!-- Tabla de estrategias de testing -->
+            <div class="tech-table-wrapper" role="region" aria-label="Tabla de testing">
+              <table class="tech-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Estrategia / Framework</th>
+                    <th scope="col">Tipo de Test</th>
+                    <th scope="col">Nivel de Aplicación</th>
+                    <th scope="col">Contexto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ── Go testing package ── -->
+                  <tr>
+                    <td><span class="tech-name">Go testing (package estándar)</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Unitario / Funcional</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 60%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos</span>
+                    </td>
+                    <td class="tech-context">
+                      Tests de correctitud funcional para Pilas, Colas, Listas, ABB, Heap
+                      y Grafos. Precondición obligatoria antes de la revisión de diseño.
+                    </td>
+                  </tr>
+                  <!-- ── JUnit 5 ── -->
+                  <tr>
+                    <td><span class="tech-name">JUnit 5 (ciclo TDD)</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Unitario — Red/Green/Refactor</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 65%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos Java</span>
+                    </td>
+                    <td class="tech-context">
+                      Desarrollo Guiado por Pruebas: escribo el test antes de la
+                      implementación. El test define el comportamiento esperado;
+                      el código productivo solo existe para pasarlo. Fuerza claridad
+                      sobre qué hace el sistema antes de decidir cómo lo hace.
+                    </td>
+                  </tr>
+                  <!-- ── Mockito (Test Doubles) ── -->
+                  <tr>
+                    <td><span class="tech-name">Mockito — Test Doubles</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Aislamiento de dependencias</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 60%"></div>
+                      </div>
+                      <span class="skill-label">Aplicado en proyectos Java</span>
+                    </td>
+                    <td class="tech-context">
+                      Creación de Stubs (respuestas fijas para controlar estado),
+                      Mocks (verificación de comportamiento: que el sistema llame
+                      lo correcto a su dependencia) y Spies (registro de invocaciones).
+                      Permite testear lógica de negocio sin depender de bases de datos
+                      reales ni APIs externas.
+                    </td>
+                  </tr>
+                  <!-- ── Corrector automático ── -->
+                  <tr>
+                    <td><span class="tech-name">Corrector automático (myrpl.ar)</span></td>
+                    <td><span class="tech-badge tech-badge--neutral">Integración / Regresión</span></td>
+                    <td>
+                      <div class="skill-bar" role="meter" aria-label="Nivel" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-bar__fill" style="--level: 70%"></div>
+                      </div>
+                      <span class="skill-label">Usado sistemáticamente</span>
+                    </td>
+                    <td class="tech-context">
+                      Plataforma con suites de tests automáticos contra las
+                      implementaciones. Forzó el hábito de diseñar para la
+                      corrección real, no para parecer correcto.
+                    </td>
+                  </tr>
+                  <!-- PLACEHOLDER ROW — Agregar estrategias de testing aquí -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="doc-callout doc-callout--metric" role="note">
+              <span class="doc-callout__icon" aria-hidden="true">◈</span>
+              <div class="doc-callout__body">
+                <strong>Disciplina de calidad:</strong>
+                Todo proyecto requería pasar todas las pruebas automáticas antes
+                de la revisión de diseño. La calidad del diseño (modularización,
+                encapsulamiento, SOLID) era un criterio de rechazo independiente
+                de la corrección funcional. Un sistema que funciona pero huele mal
+                es un pasivo técnico encubierto.
+              </div>
+            </div>
+
+            <!-- Taxonomía de Test Doubles -->
+            <div class="concept-block" style="margin-top: 2rem;">
+              <h3 class="concept-block__title">Taxonomía de Test Doubles — cuándo usar cada uno</h3>
+              <ul class="concept-list" role="list">
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Dummy</span>
+                  <span class="concept-list__desc">
+                    Objeto inerte que satisface una firma de método pero nunca
+                    se invoca. Sirve para completar listas de parámetros que
+                    el test no necesita ejercitar.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Stub — control de estado de entrada</span>
+                  <span class="concept-list__desc">
+                    Devuelve respuestas predefinidas para controlar el estado
+                    que el sistema bajo test recibe. Testea cómo el sistema
+                    reacciona ante datos específicos de sus dependencias.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Mock — verificación de comportamiento</span>
+                  <span class="concept-list__desc">
+                    El doble más preciso: verifica que el sistema "diga" lo correcto
+                    a su dependencia. No solo que reciba el resultado correcto
+                    (Stub), sino que invoque el método correcto con los argumentos
+                    correctos. Clave para sistemas basados en eventos y mensajes.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Fake — implementación alternativa</span>
+                  <span class="concept-list__desc">
+                    Implementación funcional pero no apta para producción:
+                    una base de datos en memoria (H2) frente a un PostgreSQL real.
+                    Útil para tests de integración rápidos sin infraestructura externa.
+                  </span>
+                </li>
+                <li class="concept-list__item" role="listitem">
+                  <span class="concept-list__term">Spy — registro de invocaciones</span>
+                  <span class="concept-list__desc">
+                    Un colaborador real que registra métricas de uso: cuántas veces
+                    fue llamado, con qué parámetros. Combina el comportamiento real
+                    con la capacidad de introspección del test.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ── 4.3 Flujos de Desarrollo ── -->
+          <article class="doc-section" id="metodologias-flujos" aria-labelledby="metodologias-flujos-title">
+            <h2 id="metodologias-flujos-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Flujos de Desarrollo
+            </h2>
+            <p class="doc-section__intro">
+              Mi flujo de desarrollo en proyectos de algoritmos tiene una estructura
+              disciplinada que emergió del trabajo colaborativo en equipo de dos:
+              acordar contratos antes de implementar, verificar complejidad antes de entregar
+              y trabajar en entorno Linux con Go nativo sin dependencias innecesarias.
+            </p>
+
+            <!-- Timeline visual del flujo -->
+            <ol class="dev-flow" role="list" aria-label="Flujo de desarrollo">
+              <li class="dev-flow__step" role="listitem">
+                <span class="dev-flow__num" aria-hidden="true">01</span>
+                <div class="dev-flow__content">
+                  <h4 class="dev-flow__title">Leer el enunciado buscando pistas estructurales</h4>
+                  <p class="dev-flow__desc">
+                    El tipo de problema (grafos, recursión, orden) determina la estrategia.
+                    Identifico restricciones de complejidad antes de diseñar la solución.
+                  </p>
+                </div>
+              </li>
+              <li class="dev-flow__step" role="listitem">
+                <span class="dev-flow__num" aria-hidden="true">02</span>
+                <div class="dev-flow__content">
+                  <h4 class="dev-flow__title">Modelar visualmente (papel o pizarrón)</h4>
+                  <p class="dev-flow__desc">
+                    Dibujo los estados del arreglo/grafo/árbol antes de codificar.
+                    Defensa principal contra errores de lógica en particiones recursivas.
+                  </p>
+                </div>
+              </li>
+              <li class="dev-flow__step" role="listitem">
+                <span class="dev-flow__num" aria-hidden="true">03</span>
+                <div class="dev-flow__content">
+                  <h4 class="dev-flow__title">Definir el contrato de la interfaz pública</h4>
+                  <p class="dev-flow__desc">
+                    En proyectos grupales: acordar las primitivas del TDA antes de
+                    que cada integrante implemente su módulo. Trabajar contra interfaces,
+                    no contra implementaciones concretas.
+                  </p>
+                </div>
+              </li>
+              <li class="dev-flow__step" role="listitem">
+                <span class="dev-flow__num" aria-hidden="true">04</span>
+                <div class="dev-flow__content">
+                  <h4 class="dev-flow__title">Implementar con tests unitarios simultáneos</h4>
+                  <p class="dev-flow__desc">
+                    Escribo tests de casos borde (vacío, un elemento, máximo tamaño)
+                    al mismo tiempo que implemento. No como TDD estricto, sino como
+                    verificación continua de la lógica.
+                  </p>
+                </div>
+              </li>
+              <li class="dev-flow__step" role="listitem">
+                <span class="dev-flow__num" aria-hidden="true">05</span>
+                <div class="dev-flow__content">
+                  <h4 class="dev-flow__title">Check final de complejidad y encapsulamiento</h4>
+                  <p class="dev-flow__desc">
+                    Verifico que la complejidad real coincida con la teórica. Reviso que
+                    ningún consumidor acceda a campos internos. Ejecuto el corrector
+                    automático como gate de calidad antes de entregar.
+                  </p>
+                </div>
+              </li>
+              <!-- PLACEHOLDER STEP — Agregar etapas de nuevas materias aquí -->
+            </ol>
+          </article>
+        </section>
+
+        <!-- ════════════════════════════════════
+             CAPÍTULO 5: PROBLEMAS RESUELTOS
+        ════════════════════════════════════ -->
+        <section class="doc-chapter" id="cap-problemas" aria-labelledby="cap-problemas-title">
+          <div class="doc-chapter__header">
+            <span class="doc-chapter__number">05</span>
+            <h2 id="cap-problemas-title" class="doc-chapter__title">Problemas Resueltos</h2>
+            <p class="doc-chapter__subtitle">
+              La sección más importante del perfil. No lo que sé en teoría,
+              sino los problemas reales que resolví y cómo los resolví.
+            </p>
+          </div>
+
+          <!-- ── 5.1 Problemas Lógicos & Algorítmicos ── -->
+          <article class="doc-section" id="problemas-logicos" aria-labelledby="problemas-logicos-title">
+            <h2 id="problemas-logicos-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Problemas Lógicos &amp; Algorítmicos
+            </h2>
+            <p class="doc-section__intro">
+              El dominio de estos problemas no es solo una habilidad de entrevista técnica.
+              Es la evidencia de que entiendo cómo la estructura de los datos dicta la
+              eficiencia del sistema. Cada problema resuelto aquí representa una clase
+              de problema recurrente en sistemas reales.
+            </p>
+
+            <div class="problem-list" role="list">
+
+              <!-- ── Problema del Pico ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">División y Conquista — Búsqueda</span>
+                  <h4 class="problem-item__title">Problema del Pico: búsqueda logarítmica en arreglo unimodal</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Dado un arreglo estrictamente creciente hasta un pico y luego estrictamente
+                  decreciente, encontrar la posición del valor máximo.
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  Implementé División y Conquista: comparo el elemento central con su
+                  sucesor. Si arr[mid] &lt; arr[mid+1], el pico está a la derecha; caso
+                  contrario, a la izquierda. Cada llamada recursiva descarta la mitad del
+                  espacio de búsqueda. Formalizado con Teorema Maestro:
+                  A=1, B=2, C=0 → log₂(1)=0=C → <strong>O(log n)</strong> vs. O(n) de la fuerza bruta.
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Reducción de complejidad:</span>
+                  <span class="problem-item__metric-value">O(n) → O(log n)</span>
+                </div>
+              </div>
+
+              <!-- ── Selección de algoritmo de ordenamiento ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">Ordenamiento — Decisión Arquitectónica</span>
+                  <h4 class="problem-item__title">Selección del algoritmo de ordenamiento según propiedades de datos</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Dado un conjunto de datos con distintas propiedades (rango acotado, casi
+                  ordenados, estabilidad requerida, memoria crítica), elegir el algoritmo
+                  óptimo en lugar del "genérico".
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  Aplico un árbol de decisión:
+                  — Rangos acotados → Counting Sort o Radix Sort (O(n), superando el límite comparativo).
+                  — Memoria crítica → Heap Sort o Quick Sort in-place.
+                  — Estabilidad obligatoria → Merge Sort.
+                  — Hardware con escrituras limitadas (EEPROM) → Selection Sort (minimiza escrituras).
+                  — Arreglo casi ordenado → Insertion Sort (casi O(n) en ese caso).
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Impacto:</span>
+                  <span class="problem-item__metric-value">Hasta O(n) vs. O(n log n) con elección correcta</span>
+                </div>
+              </div>
+
+              <!-- ── Puntos de Articulación en Grafos ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">Grafos — Análisis de Vulnerabilidades</span>
+                  <h4 class="problem-item__title">Identificación de Puntos de Articulación para redes resilientes</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Dada una red modelada como grafo no dirigido, encontrar los vértices
+                  cuya eliminación fragmenta la red en componentes inconexas
+                  (aumenta el número de componentes conexas).
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  Implementé DFS modificado (Algoritmo de Tarjan): para nodos raíz del DFS,
+                  es punto de articulación si tiene más de un hijo en el árbol de expansión.
+                  Para nodos internos, si no existe ningún camino de retorno hacia sus
+                  ancestros. Complejidad: O(V + E) usando Listas de Adyacencia.
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Complejidad:</span>
+                  <span class="problem-item__metric-value">O(V + E) con DFS modificado</span>
+                </div>
+              </div>
+
+              <!-- ── Caminos Mínimos ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">Grafos — Optimización de Rutas</span>
+                  <h4 class="problem-item__title">Selección del algoritmo de camino mínimo según características del grafo</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Dado un grafo pesado, encontrar el camino de menor costo entre
+                  un origen y todos los destinos, eligiendo el algoritmo correcto según
+                  si los pesos son positivos, negativos o si hay ciclos negativos.
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  — Pesos positivos → Dijkstra con Heap de mínimos (greedy, O((V+E) log V)).
+                  — Pesos negativos → Bellman-Ford (O(V·E), único algoritmo seguro ante costos negativos).
+                  — Todos contra todos → Floyd-Warshall (programación dinámica, O(V³)).
+                  — Sin pesos → BFS garantiza el camino de menor cantidad de aristas.
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Escenario crítico:</span>
+                  <span class="problem-item__metric-value">Dijkstra falla ante pesos negativos — Bellman-Ford garantiza integridad</span>
+                </div>
+              </div>
+
+              <!-- ── Eliminación de Code Smells — Refactorización ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">Diseño OOP — Deuda Técnica</span>
+                  <h4 class="problem-item__title">Eliminar condicionales basados en tipo con polimorfismo</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Un sistema con un método que contiene un switch sobre tipos de objetos
+                  (EUROPEAN, AFRICAN, NORWEGIAN_BLUE). Agregar un tipo nuevo obliga a
+                  modificar ese método y todos los lugares donde aparece el mismo patrón:
+                  fragilidad garantizada.
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  Aplicar Replace Conditional with Polymorphism: extraer el bloque
+                  condicional, crear una jerarquía de subclases donde cada una implementa
+                  su propia lógica, eliminar las ramas del condicional y declarar el
+                  método abstracto en la clase base. El cliente llama bird.getSpeed();
+                  el objeto decide cómo responde. Agregar un tipo nuevo no toca el código
+                  existente: solo añade una subclase.
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Impacto arquitectónico:</span>
+                  <span class="problem-item__metric-value">Open/Closed: extensión sin modificación del código base existente</span>
+                </div>
+              </div>
+
+              <!-- PLACEHOLDER PROBLEM — Agregar problemas lógicos aquí -->
+            </div>
+          </article>
+
+          <!-- ── 5.2 Problemas de Negocio ── -->
+          <article class="doc-section" id="problemas-negocio" aria-labelledby="problemas-negocio-title">
+            <h2 id="problemas-negocio-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Problemas de Negocio
+            </h2>
+            <p class="doc-section__intro">
+              Los problemas de negocio resueltos hasta ahora están relacionados con el
+              modelado correcto de las estructuras que representan entidades del dominio
+              y con la elección de las estructuras de datos que mejor satisfacen
+              los patrones de acceso esperados.
+            </p>
+
+            <div class="problem-list" role="list">
+
+              <!-- ── Selección ABB vs. Hash ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">Modelado de Datos — Decisión Arquitectónica</span>
+                  <h4 class="problem-item__title">Elegir entre Árbol ABB y Tabla de Hash según el patrón de acceso</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Un sistema necesita almacenar registros con clave única y luego
+                  consultarlos. La pregunta arquitectónica es: ¿Tabla de Hash (O(1) promedio)
+                  o Árbol Binario de Búsqueda (O(log n))?.
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  La decisión depende del patrón de acceso: si solo se necesitan búsquedas
+                  puntuales, la Hash Table es superior. Si el sistema necesita iterar
+                  por rango ("dame todos los registros entre A y B"), el ABB es la única
+                  opción viable porque mantiene el orden. Elegir Hash para un caso que
+                  requiere rango es un error arquitectónico, no de implementación.
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Criterio de decisión:</span>
+                  <span class="problem-item__metric-value">Búsqueda puntual → Hash · Iteración por rango → ABB</span>
+                </div>
+              </div>
+
+              <!-- ── Diseño de sistema con MVC ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">Arquitectura de Aplicación — Separación de capas</span>
+                  <h4 class="problem-item__title">Diseñar un sistema de escritorio sin acoplar la UI a la lógica de negocio</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Una aplicación de escritorio donde los cambios de diseño visual
+                  rompen la lógica de negocio y viceversa. El código de la interfaz
+                  manipula directamente los datos y el código de datos depende
+                  de cómo se renderizan: cualquier cambio en uno requiere modificar el otro.
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  Aplicar MVC estricto con JavaFX: el Modelo gestiona el estado sin
+                  saber nada de la Vista, la Vista solo renderiza datos y dispara eventos,
+                  el Controlador media sin exponer detalles de ninguna capa. La Vista
+                  se actualiza automáticamente vía Properties (Observer) cuando el
+                  Modelo cambia. El hilo principal no procesa lógica pesada:
+                  Platform.runLater() garantiza que las actualizaciones de UI llegan
+                  desde hilos secundarios de forma segura.
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Resultado:</span>
+                  <span class="problem-item__metric-value">Cambios de UI sin tocar el Modelo · Cambios de lógica sin reescribir la Vista</span>
+                </div>
+              </div>
+
+              <!-- ── Decisión: Interface vs. Abstract Class ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">Diseño OOP — Contratos vs. Reutilización</span>
+                  <h4 class="problem-item__title">Elegir entre interfaz y clase abstracta para un contrato de comportamiento</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Un sistema necesita que varios objetos de linajes distintos
+                  compartan un comportamiento común (ej. un Celular y una PalomaMensajera
+                  pueden enviar mensajes). La pregunta: ¿jerarquía de herencia o interfaz?
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  Si el propósito es compartir código e implementación: clase abstracta.
+                  Si el propósito es definir un contrato de comportamiento puro sin estado
+                  compartido: interfaz. Las interfaces permiten que objetos de linajes
+                  totalmente distintos compartan roles sin el acoplamiento rígido de
+                  la herencia. Java permite implementar múltiples interfaces pero
+                  extender solo una clase, precisamente para evitar el Problema del Diamante.
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Criterio de decisión:</span>
+                  <span class="problem-item__metric-value">Estado compartido → Clase abstracta · Contrato puro → Interfaz</span>
+                </div>
+              </div>
+
+              <!-- PLACEHOLDER PROBLEM — Agregar problemas de negocio aquí -->
+            </div>
+          </article>
+
+          <!-- ── 5.3 Problemas de Infraestructura ── -->
+          <article class="doc-section" id="problemas-infraestructura" aria-labelledby="problemas-infraestructura-title">
+            <h2 id="problemas-infraestructura-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Problemas de Infraestructura
+            </h2>
+            <p class="doc-section__intro">
+              A nivel de infraestructura algorítmica, el principal problema resuelto
+              es el de los datos que exceden la memoria RAM disponible: ordenamiento
+              externo y estrategias de I/O mínimo para grandes volúmenes.
+            </p>
+
+            <div class="problem-list" role="list">
+
+              <!-- ── Ordenamiento Externo ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">Escalabilidad — Datos fuera de RAM</span>
+                  <h4 class="problem-item__title">Ordenamiento externo con minimización de accesos a disco (I/O)</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Ordenar un archivo que excede la capacidad de la memoria RAM. Los accesos
+                  a disco son órdenes de magnitud más lentos que los accesos a RAM:
+                  minimizarlos es el único objetivo arquitectónico relevante.
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  Uso de Replacement-Selection Sort con un Heap en memoria para generar
+                  "corridas" (runs) de datos ordenados tan extensas como sea posible,
+                  incluso superando el tamaño de RAM. Luego, k-merge en disco para integrar
+                  múltiples flujos en un resultado final ordenado. El Árbol B+ es la
+                  estructura predilecta de los DBMS por la misma razón: acceso secuencial
+                  ultra rápido a través de las hojas enlazadas.
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Estructura óptima para disco:</span>
+                  <span class="problem-item__metric-value">Árbol B+ — lectura secuencial O(n/B) con bloques de disco</span>
+                </div>
+              </div>
+
+              <!-- ── Selección de representación de grafo ── -->
+              <div class="problem-item" role="listitem">
+                <div class="problem-item__header">
+                  <span class="problem-item__tag">Eficiencia de Memoria — Redes a escala</span>
+                  <h4 class="problem-item__title">Representación de grafos de millones de nodos sin colapso de memoria</h4>
+                </div>
+                <p class="problem-item__context">
+                  <strong>Contexto:</strong>
+                  Una red social de 10⁶ usuarios requiere modelado como grafo. La elección
+                  de representación determina si el sistema es viable en producción.
+                </p>
+                <p class="problem-item__solution">
+                  <strong>Solución:</strong>
+                  Matriz de Adyacencia requeriría ~1 TB de RAM (O(V²)) para 10⁶ nodos.
+                  Lista de Adyacencia: O(V+E) — unos pocos cientos de MB para una red dispersa.
+                  La elección entre ambas es estrictamente función de la densidad del grafo
+                  y la frecuencia de consultas de existencia de arista.
+                </p>
+                <div class="problem-item__metric">
+                  <span class="problem-item__metric-label">Reducción de memoria:</span>
+                  <span class="problem-item__metric-value">~1 TB (Matriz) → ~200 MB (Lista) para 10⁶ nodos dispersos</span>
+                </div>
+              </div>
+
+              <!-- PLACEHOLDER PROBLEM — Agregar problemas de infraestructura de nuevas materias aquí -->
+            </div>
+          </article>
+
+          <!-- ── 5.4 Métricas de Eficiencia ── -->
+          <article class="doc-section" id="metricas" aria-labelledby="metricas-title">
+            <h2 id="metricas-title" class="doc-section__title">
+              <span class="doc-section__anchor" aria-hidden="true">#</span>
+              Métricas de Eficiencia
+            </h2>
+            <p class="doc-section__intro">
+              Las métricas que puedo demostrar son de complejidad algorítmica:
+              reducciones cuantificables del orden temporal de los algoritmos.
+              Estas no son estimaciones: son demostraciones matemáticas via Teorema Maestro
+              aplicadas a implementaciones concretas en Go.
+            </p>
+
+            <!-- Grid de métricas tipo stat cards -->
+            <div class="metrics-grid" role="list" aria-label="Métricas de eficiencia">
+
+              <div class="metric-card" role="listitem">
+                <span class="metric-card__value">O(log n)</span>
+                <span class="metric-card__label">Búsqueda en arreglos unimodales</span>
+                <span class="metric-card__context">División y Conquista — Problema del Pico (vs. O(n) iterativo)</span>
+              </div>
+
+              <div class="metric-card" role="listitem">
+                <span class="metric-card__value">O(n log n)</span>
+                <span class="metric-card__label">Ordenamiento óptimo en el caso general</span>
+                <span class="metric-card__context">Merge Sort (estable) · Quick Sort (in-place) · Heap Sort (in-place, sin overhead recursivo)</span>
+              </div>
+
+              <div class="metric-card" role="listitem">
+                <span class="metric-card__value">O(n)</span>
+                <span class="metric-card__label">Ordenamiento de datos con rango acotado</span>
+                <span class="metric-card__context">Counting Sort · Radix Sort — superando el límite inferior comparativo</span>
+              </div>
+
+              <div class="metric-card" role="listitem">
+                <span class="metric-card__value">O(V+E)</span>
+                <span class="metric-card__label">Exploración completa de grafos</span>
+                <span class="metric-card__context">BFS y DFS sobre Listas de Adyacencia — estándar de producción para grafos dispersos</span>
+              </div>
+
+              <div class="metric-card" role="listitem">
+                <span class="metric-card__value">O(1)</span>
+                <span class="metric-card__label">Acceso, inserción y borrado en extremos</span>
+                <span class="metric-card__context">Pilas y Colas — primitivas garantizadas por contrato de TDA</span>
+              </div>
+
+              <div class="metric-card" role="listitem">
+                <span class="metric-card__value">~1 TB → ~200 MB</span>
+                <span class="metric-card__label">Reducción de memoria en redes de 10⁶ nodos</span>
+                <span class="metric-card__context">Lista de Adyacencia O(V+E) vs. Matriz de Adyacencia O(V²)</span>
+              </div>
+
+              <div class="metric-card" role="listitem">
+                <span class="metric-card__value">13x</span>
+                <span class="metric-card__label">Aceleración en procesamiento paralelo</span>
+                <span class="metric-card__context">map → pmap (Clojure) — 1000 registros en &lt;1s vs. 13s secuencial, sin candados ni race conditions</span>
+              </div>
+
+              <div class="metric-card" role="listitem">
+                <span class="metric-card__value">0 cambios</span>
+                <span class="metric-card__label">En código existente al extender el sistema</span>
+                <span class="metric-card__context">Open/Closed via polimorfismo — nuevas variantes de comportamiento sin modificar el código base</span>
+              </div>
+
+              <!-- PLACEHOLDER METRIC CARD — Agregar métricas aquí -->
+            </div>
+
+            <!-- CTA de retorno al hub -->
+            <div class="doc-callout doc-callout--cta" role="complementary">
+              <span class="doc-callout__icon" aria-hidden="true">◈</span>
+              <div class="doc-callout__body">
+                <strong>¿Convencido?</strong>
+                Si estas métricas y el stack que documenté acá alinearon con lo que tu proyecto
+                necesita, el siguiente paso es simple.
+                <a href="index.html#contacto" class="doc-callout__link" id="callout-btn-contacto">
+                  Enviame una propuesta →
+                </a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Navegación entre capítulos (prev / next) -->
+        <nav class="doc-pagination" aria-label="Navegación entre capítulos">
+          <a href="#cap-stack" class="doc-pagination__btn doc-pagination__btn--prev" id="pag-prev">
+            <span class="doc-pagination__dir" aria-hidden="true">←</span>
+            <span class="doc-pagination__label">Anterior</span>
+            <span class="doc-pagination__title">[Capítulo anterior]</span>
+          </a>
+          <a href="#cap-paradigmas" class="doc-pagination__btn doc-pagination__btn--next" id="pag-next">
+            <span class="doc-pagination__label">Siguiente</span>
+            <span class="doc-pagination__title">[Capítulo siguiente]</span>
+            <span class="doc-pagination__dir" aria-hidden="true">→</span>
+          </a>
+        </nav>
+
+      </div><!-- /.doc-content -->
+    </main>
+  </div><!-- /.doc-layout -->
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="doc-footer" role="contentinfo">
+    <div class="doc-footer__inner">
+      <p class="doc-footer__copy">
+        &copy; <span id="footer-year"></span> <strong>Valentino Carmona</strong> — Todos los derechos reservados.
+      </p>
+      <p class="doc-footer__made">
+        Hecho con HTML, CSS &amp; JS — desplegado en GitHub Pages.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/sobre-mi-doc.js"></script>
+</body>
+
+</html>

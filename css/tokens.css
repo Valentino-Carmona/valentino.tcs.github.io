@@ -1,0 +1,74 @@
+/* ═══════════════════════════════════════════════════
+   DESIGN TOKENS — Sistema de diseño centralizado
+   Aesthetic: Editorial Noir / Luxury Minimal
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  /* ── Color story: Oscuro dominante · Oro quemado · Neutros ── */
+  --color-bg:          #0b0b0d;          /* Negro profundo */
+  --color-bg-alt:      #111115;          /* Oscuro ligeramente elevado */
+  --color-bg-card:     #17171c;          /* Tarjeta/superficie */
+  --color-border:      #2a2a32;          /* Borde sutil */
+  --color-accent:      #c9a96e;          /* Oro quemado — acento dominante */
+  --color-accent-dim:  rgba(201,169,110,.15); /* Acento con transparencia */
+  --color-accent-glow: rgba(201,169,110,.08); /* Para glows */
+  --color-text-primary:   #f0ede8;       /* Blanco cálido */
+  --color-text-secondary: #8a8a96;       /* Gris medio */
+  --color-text-muted:     #4a4a56;       /* Gris apagado */
+
+  /* ── Tipografía ── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;  /* Expresivo, editorial */
+  --font-body:    'DM Sans', system-ui, sans-serif;       /* Restringido, legible */
+
+  --fs-xs:   0.75rem;   /* 12px */
+  --fs-sm:   0.875rem;  /* 14px */
+  --fs-base: 1rem;      /* 16px */
+  --fs-md:   1.125rem;  /* 18px */
+  --fs-lg:   1.375rem;  /* 22px */
+  --fs-xl:   1.75rem;   /* 28px */
+  --fs-2xl:  2.5rem;    /* 40px */
+  --fs-3xl:  3.5rem;    /* 56px */
+  --fs-4xl:  5rem;      /* 80px */
+  --fs-hero: clamp(3.5rem, 9vw, 7rem);
+
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+
+  --lh-tight:  1.1;
+  --lh-snug:   1.3;
+  --lh-base:   1.6;
+  --lh-loose:  1.8;
+
+  /* ── Espaciado (8-point grid) ── */
+  --space-1:  0.5rem;   /*  8px */
+  --space-2:  1rem;     /* 16px */
+  --space-3:  1.5rem;   /* 24px */
+  --space-4:  2rem;     /* 32px */
+  --space-5:  3rem;     /* 48px */
+  --space-6:  4rem;     /* 64px */
+  --space-7:  6rem;     /* 96px */
+  --space-8:  8rem;     /* 128px */
+
+  /* ── Bordes y radios ── */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg: 16px;
+
+  /* ── Sombras ── */
+  --shadow-card: 0 4px 40px rgba(0,0,0,.6), 0 1px 0 var(--color-border);
+  --shadow-glow: 0 0 40px var(--color-accent-glow);
+
+  /* ── Transiciones ── */
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:   150ms;
+  --dur-normal: 300ms;
+  --dur-slow:   600ms;
+
+  /* ── Layout ── */
+  --max-width:        1200px;
+  --max-width-narrow: 760px;
+  --nav-height:       72px;
+}

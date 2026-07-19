@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio profesional — Desarrollador, creador de contenido y emprendedor digital. Conocé mis proyectos, cursos y servicios." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Valentino Carmona — Portfolio Profesional" />
+  <meta property="og:description" content="Desarrollador, creador de contenido y emprendedor digital." />
+  <meta property="og:type" content="website" />
+  <title>Valentino Carmona — Portfolio Profesional</title>
+
+  <!-- Google Fonts: display + body pairing (no Inter/Roboto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/sobre-mi.css" />
+  <link rel="stylesheet" href="css/stripe-patterns.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVEGACIÓN
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
+    <a href="#inicio" class="nav__logo" aria-label="Ir al inicio">
+      <img src="img/mi_logo.png" alt="VC" class="nav__logo-img" onerror="this.outerHTML='VC'" />
+    </a>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav__hamburger"></span>
+    </button>
+    <ul class="nav__menu" id="nav-menu" role="list">
+      <li><a href="#sobre-mi" class="nav__link">Quién soy</a></li>
+      <li><a href="#evidencia" class="nav__link">Evidencia</a></li>
+      <li><a href="#promesa" class="nav__link">Promesa</a></li>
+      <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
+      <li><a href="#productos" class="nav__link">Cursos</a></li>
+      <li><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════
+         HERO / INICIO
+    ═══════════════════════════════════════ -->
+    <section id="inicio" class="hero" aria-label="Presentación principal">
+      <!-- Patrón Stripe #2: fullbleed lines decorativas -->
+      <div class="hero__fullbleed-line hero__fullbleed-line--top" aria-hidden="true"></div>
+      <div class="hero__fullbleed-line hero__fullbleed-line--bottom" aria-hidden="true"></div>
+
+      <div class="hero__bg-grid" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Ingeniería de Software de Alta Precisión</p>
+
+        <!-- Patrón Stripe #3: mix-blend-mode en título -->
+        <div class="hero__name-wrapper">
+          <h1 class="hero__name" id="hero-name">Valentino Carmona</h1>
+        </div>
+
+        <p class="hero__tagline">Tú pones la visión comercial. Yo diseño la arquitectura, audito el caos y construyo tu
+          producto sin limitaciones técnicas.</p>
+        <div class="hero__actions">
+          <!-- Patrón Stripe #1: hover arrow en btn--primary -->
+          <a href="#contacto" class="btn btn--primary" id="btn-hero-contacto">Materializar mi idea</a>
+          <a href="#proyectos" class="btn btn--ghost" id="btn-hero-proyectos">Ver evidencia en producción</a>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-label">scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PATRÓN STRIPE #4 — Marquee de stack
+         Carrusel infinito del stack tecnológico
+         (inspirado en logo-carousel de Stripe)
+    ═══════════════════════════════════════ -->
+    <div class="stack-marquee" aria-label="Stack tecnológico" role="marquee">
+      <div class="stack-marquee__track" aria-hidden="true">
+        <!-- Lista duplicada para el loop infinito -->
+        <span class="stack-marquee__item">Java</span>
+        <span class="stack-marquee__item">Python</span>
+        <span class="stack-marquee__item">JavaScript</span>
+        <span class="stack-marquee__item">TypeScript</span>
+        <span class="stack-marquee__item">PostgreSQL</span>
+        <span class="stack-marquee__item">MongoDB</span>
+        <span class="stack-marquee__item">Spring Boot</span>
+        <span class="stack-marquee__item">React</span>
+        <span class="stack-marquee__item">Node.js</span>
+        <span class="stack-marquee__item">Docker</span>
+        <span class="stack-marquee__item">TDD</span>
+        <span class="stack-marquee__item">WebSockets</span>
+        <span class="stack-marquee__item">REST APIs</span>
+        <span class="stack-marquee__item">Git</span>
+        <span class="stack-marquee__item">Agentes IA</span>
+        <!-- Duplicado para el loop sin cortes visibles -->
+        <span class="stack-marquee__item">Java</span>
+        <span class="stack-marquee__item">Python</span>
+        <span class="stack-marquee__item">JavaScript</span>
+        <span class="stack-marquee__item">TypeScript</span>
+        <span class="stack-marquee__item">PostgreSQL</span>
+        <span class="stack-marquee__item">MongoDB</span>
+        <span class="stack-marquee__item">Spring Boot</span>
+        <span class="stack-marquee__item">React</span>
+        <span class="stack-marquee__item">Node.js</span>
+        <span class="stack-marquee__item">Docker</span>
+        <span class="stack-marquee__item">TDD</span>
+        <span class="stack-marquee__item">WebSockets</span>
+        <span class="stack-marquee__item">REST APIs</span>
+        <span class="stack-marquee__item">Git</span>
+        <span class="stack-marquee__item">Agentes IA</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         QUIÉN SOY  (HU03 / CP03)
+    ═══════════════════════════════════════ -->
+    <section id="sobre-mi" class="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <div class="sobre-mi__inner">
+
+        <aside class="sobre-mi__sidebar" aria-hidden="true">
+          <div class="sobre-mi__number">01</div>
+          <div class="sobre-mi__rule"></div>
+          <div class="sobre-mi__tag">Quién soy</div>
+        </aside>
+
+        <div class="sobre-mi__content">
+
+          <div class="sobre-mi__intro-block">
+            <h2 id="sobre-mi-titulo" class="sobre-mi__headline">
+              Tu web no debería ser un problema.<br />
+              <em>Yo la construyo desde cero, escalo sus funciones<br />o reparo su código de raíz.</em>
+            </h2>
+          </div>
+
+          <div class="sobre-mi__bio">
+            <div class="sobre-mi__bio-col sobre-mi__bio-col--lead">
+              <p class="sobre-mi__lead-text">
+                Hola, soy <strong>Valentino Carmona</strong> — Ingeniero de Software y desarrollador freelance.
+                Me dedico a auditar, corregir y escalar aplicaciones web, o a diseñar la arquitectura completa si tu
+                idea aún está en papel.
+              </p>
+            </div>
+
+            <div class="sobre-mi__bio-col sobre-mi__bio-col--body">
+              <p>
+                Una página web frágil, una base de datos mal estructurada o un frontend lento te hacen perder clientes
+                antes de que siquiera entiendan lo que ofreces. Mi enfoque no es venderte un paquete cerrado, sino
+                aplicar ingeniería quirúrgica adaptada a la realidad de tu negocio. Si requieres integrar una nueva
+                funcionalidad, auditar un código heredado que falla bajo presión, o levantar una plataforma desde cero,
+                entro en "modo francotirador": aíslo el ruido del entorno, diagnostico la falla lógica y ejecuto la
+                solución exacta.
+              </p>
+
+              <p>
+                No te pido que confíes en promesas vacías, sino en evidencia empírica. Por estrictos acuerdos de
+                confidencialidad y respeto a la propiedad intelectual de mis clientes, no expongo el código final de sus
+                plataformas privadas en repositorios públicos. Lo que verás en mi portafolio son los MVPs (Productos
+                Mínimos Viables): las arquitecturas fundacionales e iniciales que construí para ellos. Estos sistemas
+                validados demuestran mi rigor técnico —aplicando metodologías como TDD con más del 80% de cobertura— sin
+                comprometer la lógica de negocio privada.
+              </p>
+
+              <p>
+                Fuera del código, divido mi tiempo entre la natación y el entrenamiento de fuerza pesado. Entiendo la
+                disciplina física y mental como un mismo ecosistema. Levantar peso o nadar bajo presión me enseñó que el
+                estrés y la incomodidad son solo datos estadísticos a procesar. Como suelo decir: si nada cambia... nada
+                cambia. Vos sos el único que puede llevar tu idea al éxito; mi trabajo es darte la infraestructura
+                técnica para que no falles.
+              </p>
+            </div>
+          </div>
+
+          <div class="sobre-mi__stats" role="list" aria-label="Logros destacados">
+            <div class="sobre-mi__stat" role="listitem">
+              <span class="sobre-mi__stat-number" data-target="29">+29</span>
+              <span class="sobre-mi__stat-label">Proyectos Freelance Producidos</span>
+            </div>
+            <div class="sobre-mi__stat" role="listitem">
+              <span class="sobre-mi__stat-number" data-target="85">+85%</span>
+              <span class="sobre-mi__stat-label">Cobertura en Testing (TDD)</span>
+            </div>
+            <div class="sobre-mi__stat" role="listitem">
+              <span class="sobre-mi__stat-number" data-target="20">+20</span>
+              <span class="sobre-mi__stat-label">Tecnologías Dominadas</span>
+            </div>
+            <div class="sobre-mi__stat" role="listitem">
+              <span class="sobre-mi__stat-number" data-target="100">100%</span>
+              <span class="sobre-mi__stat-label">Código Auditado y Escalable</span>
+            </div>
+          </div>
+
+          <div class="sobre-mi__skills" aria-label="Habilidades y tecnologías">
+            <h3 class="sobre-mi__skills-title">Mi stack &amp; áreas de expertise</h3>
+            <div class="sobre-mi__skills-grid" role="list">
+              <span class="skill-tag" role="listitem">Auditoría y Corrección de Código</span>
+              <span class="skill-tag" role="listitem">Desarrollo Backend (Java, Python)</span>
+              <span class="skill-tag" role="listitem">Desarrollo Frontend (JS, HTML, CSS)</span>
+              <span class="skill-tag" role="listitem">Bases de Datos (PostgreSQL, MongoDB)</span>
+              <span class="skill-tag" role="listitem">Arquitectura MVC & TDD</span>
+              <span class="skill-tag" role="listitem">Creación de Funcionalidades a Medida</span>
+              <span class="skill-tag" role="listitem">Sistemas en Tiempo Real (WebSockets)</span>
+              <span class="skill-tag" role="listitem">Integración de Agentes IA</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         SECCIONES FUTURAS (placeholders)
+    ═══════════════════════════════════════ -->
+
+    <section id="evidencia" class="section-placeholder" aria-labelledby="evidencia-titulo">
+      <div class="placeholder__inner">
+        <span class="placeholder__number">02</span>
+        <h2 id="evidencia-titulo" class="placeholder__title">Evidencia</h2>
+        <p class="placeholder__desc">Próximamente: testimonios y videos de resultados.</p>
+      </div>
+    </section>
+
+    <section id="promesa" class="section-placeholder" aria-labelledby="promesa-titulo">
+      <div class="placeholder__inner">
+        <span class="placeholder__number">03</span>
+        <h2 id="promesa-titulo" class="placeholder__title">Promesa de valor</h2>
+        <p class="placeholder__desc">Próximamente: lo que obtenés al trabajar conmigo.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PATRÓN STRIPE #5/6/7 — Bento Grid
+         (HU01 / HU02 / CP01 / CP02)
+         Bento 7fr+5fr, scroll-snap mobile,
+         pagination dots CSS
+    ═══════════════════════════════════════ -->
+    <section id="proyectos" class="bento-section" aria-labelledby="proyectos-titulo">
+      <div class="bento-section__header">
+        <span class="bento-section__number">04</span>
+        <h2 id="proyectos-titulo" class="bento-section__title">Proyectos</h2>
+      </div>
+
+      <div class="bento-grid" id="bento-grid" role="list">
+
+        <!-- Card principal (span 2 filas) -->
+        <article class="bento-card bento-card--main" role="listitem">
+          <div class="bento-card__orb bento-card__orb--accent" aria-hidden="true"></div>
+          <div class="bento-card__body">
+            <span class="bento-card__tag">MVP · Backend</span>
+            <h3 class="bento-card__title">[Nombre del Proyecto 1]</h3>
+            <p class="bento-card__desc">
+              Breve descripción de la arquitectura y el problema que resuelve este MVP.
+              Stack: [tecnologías]. Resultado: [métrica o impacto concreto].
+            </p>
+            <!-- HU02/CP02: target="_blank" + rel seguro -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="bento-card__link"
+              aria-label="Ver Proyecto 1 en nueva pestaña">
+              Ver proyecto →
+            </a>
+          </div>
+        </article>
+
+        <!-- Card superior derecha -->
+        <article class="bento-card bento-card--top-right" role="listitem">
+          <div class="bento-card__orb bento-card__orb--accent" aria-hidden="true"></div>
+          <div class="bento-card__body">
+            <span class="bento-card__tag">MVP · Full Stack</span>
+            <h3 class="bento-card__title">[Nombre del Proyecto 2]</h3>
+            <p class="bento-card__desc">
+              Descripción breve del caso de uso y tecnología central.
+            </p>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="bento-card__link"
+              aria-label="Ver Proyecto 2 en nueva pestaña">
+              Ver proyecto →
+            </a>
+          </div>
+        </article>
+
+        <!-- Card inferior derecha -->
+        <article class="bento-card bento-card--bot-right" role="listitem">
+          <div class="bento-card__orb bento-card__orb--accent" aria-hidden="true"></div>
+          <div class="bento-card__body">
+            <span class="bento-card__tag">MVP · Integración IA</span>
+            <h3 class="bento-card__title">[Nombre del Proyecto 3]</h3>
+            <p class="bento-card__desc">
+              Descripción breve del caso de uso y tecnología central.
+            </p>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="bento-card__link"
+              aria-label="Ver Proyecto 3 en nueva pestaña">
+              Ver proyecto →
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Paginación dots (solo mobile, Patrón Stripe carousel-pagination) -->
+      <div class="bento-pagination" aria-label="Navegación de proyectos" role="tablist" id="bento-pagination">
+        <button class="bento-pagination__dot bento-pagination__dot--active" aria-label="Proyecto 1" role="tab"></button>
+        <button class="bento-pagination__dot" aria-label="Proyecto 2" role="tab"></button>
+        <button class="bento-pagination__dot" aria-label="Proyecto 3" role="tab"></button>
+      </div>
+
+      <p class="bento-section__scroll-hint" aria-hidden="true">Deslizá para ver más</p>
+
+    </section>
+
+    <section id="productos" class="section-placeholder" aria-labelledby="productos-titulo">
+      <div class="placeholder__inner">
+        <span class="placeholder__number">05</span>
+        <h2 id="productos-titulo" class="placeholder__title">Cursos &amp; Productos</h2>
+        <p class="placeholder__desc">Próximamente: catálogo de productos digitales.</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="section-placeholder" aria-labelledby="contacto-titulo">
+      <div class="placeholder__inner">
+        <span class="placeholder__number">06</span>
+        <h2 id="contacto-titulo" class="placeholder__title">Contacto</h2>
+        <p class="placeholder__desc">Próximamente: redes, email y formulario de propuesta.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <p class="footer__copy">
+      &copy; <span id="footer-year"></span> <strong>Valentino Carmona</strong> — Todos los derechos reservados.
+    </p>
+    <p class="footer__made">
+      Hecho con HTML, CSS &amp; JS — desplegado en GitHub Pages.
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
